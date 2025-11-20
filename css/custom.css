@@ -1,0 +1,142 @@
+/**
+ * 自定义样式文件
+ * 包含主题切换器和侧边栏折叠的样式
+ */
+
+/* ==================== 主题切换器样式 ==================== */
+.theme-switcher-container {
+  position: fixed;
+  top: 20px;
+  right: 80px;
+  z-index: 9999;
+}
+
+.theme-switcher-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #34495e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.theme-switcher-button:hover {
+  border-color: #42b983;
+  box-shadow: 0 4px 12px rgba(66,185,131,0.2);
+}
+
+.theme-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.theme-arrow {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.theme-switcher-container.active .theme-arrow {
+  transform: rotate(180deg);
+}
+
+.theme-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  min-width: 160px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.theme-switcher-container.active .theme-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.theme-option {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #34495e;
+  border-bottom: 1px solid #f5f5f5;
+  transition: all 0.2s ease;
+}
+
+.theme-option:last-child {
+  border-bottom: none;
+}
+
+.theme-option:hover {
+  background: #f8f9fa;
+  color: #42b983;
+}
+
+.theme-option.active {
+  background: #f0f9f6;
+  color: #42b983;
+  font-weight: 500;
+}
+
+/* ==================== 侧边栏折叠样式 ==================== */
+.sidebar-nav > ul > li > ul > li > strong {
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  display: block;
+}
+
+.sidebar-nav > ul > li > ul > li > strong::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #42b983;
+  font-size: 10px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.sidebar-nav > ul > li > ul > li.open > strong::before {
+  transform: rotate(90deg);
+}
+
+.sidebar-nav > ul > li > ul > li > strong:hover {
+  color: #42b983;
+}
+
+/* 子菜单折叠效果 */
+.sidebar-nav > ul > li > ul > li > ul {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.sidebar-nav > ul > li > ul > li.open > ul {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* ==================== 响应式设计 ==================== */
+@media screen and (max-width: 768px) {
+  .theme-switcher-container {
+    top: 10px;
+    right: 10px;
+  }
+}
+
