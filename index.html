@@ -39,7 +39,30 @@
       //repo: 'localhost:3000', 
       loadSidebar: true,
       subMaxLevel: 2,
-      auto2top: true
+      auto2top: true,
+      search: {
+                maxAge: 86400000,
+                paths: 'auto',
+                placeholder: {
+                    '/en/': '🔍 Search',
+                    '/': '🔍 搜索'
+                },
+                noData: {
+                    '/en/': '😞 No Results',
+                    '/': '😞 找不到结果'
+                },
+                depth: 6
+            },
+            pagination: {
+                previousText: {
+                    '/en/': 'Previous',
+                    '/': '上一章节'
+                },
+                nextText: {
+                    '/en/': 'Next',
+                    '/': '下一章节'
+                }
+            }
     }
   </script>
   
