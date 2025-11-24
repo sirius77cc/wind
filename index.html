@@ -31,7 +31,12 @@
   </div>
 
   <div id="app"></div>
-  
+  <!-- 回到顶部按钮 -->
+  <button id="backToTop" class="back-to-top" title="回到顶部">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 14l5-5 5 5z"/>
+    </svg>
+  </button>
   <script>
     window.$docsify = {
       name: '我的文档',
@@ -57,8 +62,8 @@
         offset: 300 // 滚动多少像素后显示按钮
       },
       pagination: {
-      previousText: '上一页', // 自定义上一页按钮文字
-      nextText: '下一页',     // 自定义下一页按钮文字
+      previousText: '上一篇', // 自定义上一页按钮文字
+      nextText: '下一篇',     // 自定义下一页按钮文字
       crossChapter: true,     // 启用跨章节导航
       crossChapterText: true  // 跨章节时显示章节名
       // routerMode: 'hash'  // 如遇路由问题可尝试配置此项 [citation:4]
@@ -67,9 +72,13 @@
   </script>
   
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  
+  <!-- 搜索插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- 分页插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <!-- 自定义脚本 -->
   <script src="js/theme-switcher.js"></script>
   <script src="js/sidebar-collapse.js"></script>
+  <script src="js/back-to-top.js"></script>
 </body>
 </html>
