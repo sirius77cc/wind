@@ -41,28 +41,28 @@
       subMaxLevel: 2,
       auto2top: true,
       search: {
-                maxAge: 86400000,
-                paths: 'auto',
-                placeholder: {
-                    '/en/': '🔍 Search',
-                    '/': '🔍 搜索'
-                },
-                noData: {
-                    '/en/': '😞 No Results',
-                    '/': '😞 找不到结果'
-                },
-                depth: 6
-            },
-            pagination: {
-                previousText: {
-                    '/en/': 'Previous',
-                    '/': '上一章节'
-                },
-                nextText: {
-                    '/en/': 'Next',
-                    '/': '下一章节'
-                }
-            }
+        maxAge: 86400000, // 本地缓存过期时间，单位毫秒，默认一天 [citation:6][citation:10]
+        paths: 'auto', // 设置为 'auto' 从侧边栏自动抓取，或手动指定路径数组 [citation:6][citation:10]
+        placeholder: '🔍 输入关键词搜索...', // 搜索框占位符，可设置图标 [citation:6][citation:10]
+        noData: '😞 找不到结果!', // 无搜索结果时显示的文字 [citation:6][citation:10]
+        depth: 6, // 搜索标题的深度 [citation:6][citation:10]
+        hideOtherSidebarContent: false, // 搜索时是否隐藏侧边栏其他内容
+        namespace: 'docsify-docs', // 本地存储索引的命名空间
+      },
+      scrollToTop: {
+        auto: true, // 是否自动显示/隐藏按钮
+        text: '↑', // 按钮文字
+        right: 15, // 距离右侧距离
+        bottom: 15, // 距离底部距离
+        offset: 300 // 滚动多少像素后显示按钮
+      },
+      pagination: {
+      previousText: '上一页', // 自定义上一页按钮文字
+      nextText: '下一页',     // 自定义下一页按钮文字
+      crossChapter: true,     // 启用跨章节导航
+      crossChapterText: true  // 跨章节时显示章节名
+      // routerMode: 'hash'  // 如遇路由问题可尝试配置此项 [citation:4]
+      }
     }
   </script>
   
